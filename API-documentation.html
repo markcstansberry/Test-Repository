@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h3 align="center"><strong>APPLICATION PROGRAMMING INTERFACE (API) </strong></h3>
+<p align="center">&nbsp;</p>
+<h4 align="center"><strong>	ANALYTIC METHODS </strong></h4>
+<h3>&nbsp;</h3>
+<h3>&nbsp;</h3>
+<h3><strong>web_analytics_tracker</strong></h3>
+<p>web_analytics_tracker returns the number of times a URL file or list of URL files was visited. The arguments that can be specified include the time monitoring interval and the zip code of the host from where the file request originated.  The url file name argument (urlpage) can be specified as a text string  or as an array object. </p>
+<p><strong><em>Signature:</em></strong> web_analytics_tracker(urlpage, timestart, timend, zipcode)</p>
+<p><strong><em>urlpage:</em></strong> The URL file name or URL file array for which site visitor statistics are requested<br />
+  <em><strong>timestart:</strong></em> The start of the search time monitoring interval<br />
+  <em><strong>timeend: </strong></em>The end of the search time monitoring interval<br />
+<em><strong>zipcode:</strong></em> The zip code of the IP host from which the URL file(s) was originally requested from</p>
+<p>Argument values specified with a “*” wildcard character will remove any search constraints for a specific field. <br />
+<br />
+</p>
+<p><u>Example Usage</u><br />
+  <br />
+$xvar = web_analytics_tracker(“http://www.clickalot.com/musicplaylist.html”, 20110414.3, 20110414.23,  93215)</p>
+<p>This API call to web_analytics_tracker returns  the number of visitor page views of the web page URL “http,www.clickalot.com/musicplaylist.html,” that originated from any IP host address with a  93215 United States zip code. The returned results only include web page visits between between 3 A.M on April 14, 2011 and April 14 at 11 P.M.  The URL page file name and the number of visitor page views are returned and stored in the key:value array named “xvar.” <br />
+  <br />
+Urlpage Argument Values</p>
+<p>When an array object is specified as an urlpage argument web_analytics tracker also returns an associative key:value array. The key contains the individual URL files names contiained in the array object.  The returned values contain the number of times that each URL file name was viewed.</p>
+<p>$xvararray = web_analytics_tracker(google, urlfilesarray, 20110414.3, 20110414.23,  93215)</p>
+<p>This API call to web_analytics_tracker returns a key:value array  that contains the number of web page visits  for each URL address listed in an array named “urlfilesarray.” The contents of $xvararray can be directly displayed in a table or charted with the  “tabulate_data”  or “chart_data” methods. <br />
+  <br />
+</p>
+</body>
+</html>
